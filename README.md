@@ -1,13 +1,22 @@
-# Vida Artificial Conversacional (PT-BR)
+# Vida Artificial Conversacional (PT-BR) — v0.2
 
-Protótipo de **arquitetura cognitiva integrada** em Rust para conversar em português do Brasil com:
+Agora o agente ficou **mais inteligente e funcional**, com aprendizado contínuo durante a conversa e memória persistente em disco.
 
-- memória episódica;
-- memória semântica;
-- consolidação periódica de memória;
-- homeostase sintética (valência, excitação, fadiga e curiosidade);
-- metacognição básica (o agente relata o que sabe e o que não sabe);
-- objetivos internos persistentes de aprendizado e preservação de dados.
+## O que melhorou
+
+- **Memória persistente sem janela curta**: episódios, fatos semânticos e reflexões são salvos automaticamente em `./.aurora_memoria.json`.
+- **Aprendizado em tempo real**: aceita padrões como `X é Y`, `X = Y`, `X significa Y` e usa isso para responder depois.
+- **Recuperação inteligente**: busca por similaridade textual para lembrar fatos e episódios relevantes, mesmo sem match exato.
+- **Reflexão periódica**: consolida memória a cada 3 turnos, reforçando conceitos recorrentes.
+- **Modo seguro**: por padrão, bloqueia pedidos ofensivos e redireciona para uso defensivo.
+- **Comandos de controle**:
+  - `/ajuda`
+  - `/status`
+  - `/salvar`
+  - `/recarregar`
+  - `/modo-seguro on|off`
+  - `/fato <chave>`
+  - `/topicos`
 
 ## Como executar
 
@@ -15,14 +24,19 @@ Protótipo de **arquitetura cognitiva integrada** em Rust para conversar em port
 cargo run
 ```
 
-## Exemplos de interação
+## Exemplo rápido
 
-- `Brasil é um país continental`
-- `lembra de brasil`
-- `como você se sente`
-- `o que você sabe`
-- `quais seus objetivos`
+```text
+Você> Brasil é um país continental
+Aurora> ...
+
+Você> capital do brasil = Brasília
+Aurora> ...
+
+Você> lembra de capital do brasil
+Aurora> Fato lembrado: capital do brasil => Brasília ...
+```
 
 ## Observação
 
-Este projeto **simula** emoções e consciência com mecanismos explícitos e auditáveis. Não alega consciência fenomenal real.
+Este sistema **simula** cognição/emoção com componentes explícitos e auditáveis. Não afirma consciência fenomenal real.
